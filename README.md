@@ -13,7 +13,20 @@ A poster-generation skill for the **constructivist impact** style by 一张有�
 </table>
 
 ## 使用 · Usage
-See [SKILL.md](SKILL.md). Full prompts: [PROMPTS.json](PROMPTS.json). 小红书配文：[XIAOHONGSHU_COPY.md](XIAOHONGSHU_COPY.md).
+
+填入字段即可生成一张海报（只给主标题也能用）：
+
+```
+【主标题】：
+【短句】：
+【场景】：
+【版式】：
+【主色强调】：
+【画幅】：9:16
+```
+
+详见 [SKILL.md](SKILL.md)、[prompt.md](prompt.md)；示例见 [examples/themes.md](examples/themes.md)；完整样例提示词：[PROMPTS.json](PROMPTS.json)。小红书配文：[XIAOHONGSHU_COPY.md](XIAOHONGSHU_COPY.md)。
+
 
 ## 来源 · Credits
 Adapted from [howardz27/poster-generator-skill](https://github.com/howardz27/poster-generator-skill) (MIT, © 2026 yinnhao). See [SOURCES.md](SOURCES.md).

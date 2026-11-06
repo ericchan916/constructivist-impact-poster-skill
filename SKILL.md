@@ -1,131 +1,102 @@
 ---
-name: constructivist-impact-poster-skill
-description: Generate a Simplified-Chinese 9:16 poster in the 「构成主义动势」(constructivist-impact) style by 一张有戏. Use when the user wants a 构成主义动势 / constructivist impact poster.
+name: constructivist-impact-poster
+description: 构成主义动势海报：用对角线张力、强对比与图形化动势，做一张决绝有力的运动感海报。根据【主标题】【短句】【场景】【版式】【主色强调】【画幅】生成一张简体中文海报。当用户提到「构成主义 / Constructivist / 动势海报」时使用。 Use when the user asks for a constructivist poster, diagonal impact poster, graphic campaign poster — produces one poster with only three visible Chinese lines: headline, supporting line, and footer「一张有戏 · 视觉习作」.
+license: MIT
 ---
 
-# 构成主义动势 · constructivist-impact poster skill
+# 构成主义动势 · Constructivist Impact Poster
 
-一张有戏「构成主义动势」风格海报技能。输出一张 9:16 竖版、简体中文的独立海报。
+用对角线张力、强对比与图形化动势，做一张决绝有力的运动感海报。
+An urgent geometric campaign-like poster with diagonal force, strong contrast, and graphic energy.
 
-## 用法
-1. 确定一个主标题（2–4 字）和一句短句。
-2. 画面只出现三段文字：主标题、短句、页脚「一张有戏 · 视觉习作」。
-3. 版式可选：diagonal-dynamic。
-4. 参照下方完整提示词模板，替换 Headline / Supporting phrase / 场景描述。
+## 输入 · Inputs
 
-## 示例主题
-- 向前：让方向成为画面的力量（diagonal-dynamic）— One monochrome worn running shoe cutout set on an ascending crimson diagonal wedge, cream/black geometry, no person.
-- 开工：把想法交给双手（diagonal-dynamic）— One metal wrench photomontage crossing red and black structural diagonals on cream, decisive concentrated layout.
-- 起势：力量从这一点展开（diagonal-dynamic）— One badminton racket silhouette and small shuttlecock across opposing red/black geometric planes, legible angled type.
-- 合力：让不同的齿轮彼此咬合（diagonal-dynamic）— Two mechanically plausible interlocking gear silhouettes as one clear focal system, red diagonal beam and stable cream text zone.
-- 破浪：把阻力画成新的路径（diagonal-dynamic）— One simplified sailboat silhouette pushing across angular blue-black waves and crimson wedge, sharp directional tension.
-- 传声：让一处声音抵达更远（diagonal-dynamic）— One monochrome megaphone with a large red triangular sound plane, cropped black type, no political symbols.
-- 拔节：向上的力量藏在结构里（diagonal-dynamic）— Bamboo segment high contrast photographic crop crossing strong red diagonal and black geometric counterweight.
-- 新页：把下一页推向光里（diagonal-dynamic）— Open unprinted book photomontage tilted upward with one cream page cutting through red/black directional planes.
-
-## 完整提示词模板（第 1 张原文）
 ```
-Use case: ads-marketing. Create exactly ONE polished professional 9:16 portrait poster, static flat artwork, Chinese-mainland cultural/creative studio portfolio concept.
-Language: Simplified Chinese. Headline: 向前. Supporting phrase: 让方向成为画面的力量. Tiny plain footer: 一张有戏 · 视觉习作. Exact visible text ONLY these three phrases, every character correctly formed. No English, random numbers, fake events, dates, addresses, awards, offers, prices, affiliations, calls to action or status labels. All content is fictional/conceptual creative brief, no real client claim.
+【主标题】：
+【短句】：
+【场景】：
+【版式】：（diagonal-dynamic，缺省 diagonal-dynamic）
+【主色强调】：（红 / mustard / steel gray / deep navy（可选））
+【画幅】：9:16（默认）
+```
 
-SOURCE UNIVERSAL RULES:
+**缺失字段不要追问**：只给了主标题（或部分字段）时，由你根据主标题自行补全其余字段，并保证场景、版式、主色强调彼此协调、指向同一概念。画幅缺省为 9:16。
+If any field is missing, fill it yourself coherently from the headline — never ask. Default aspect ratio 9:16.
 
+## 使用方法 · How to use
+1. 读取输入，补全缺失字段（内部完成，不输出分析）。
+2. 按下方核心规则 + [prompt.md](prompt.md) 组合提示词，交给图像生成工具，**只输出一张**海报。
+3. 若当前环境不能生图，输出下方「可直接粘贴的最终提示词」，已填好字段，供用户粘贴到 ChatGPT / 其他图像模型。
 
-These rules apply to every poster. Do not repeat them in layout or style notes.
+示例输入见 [examples/themes.md](examples/themes.md)。
 
-- Build around one dominant message, one clear focal point, and one communication goal.
-- Establish a simple reading order: headline -> focal image -> supporting copy -> supplied details.
-- Preserve required copy exactly unless the user explicitly asks for rewriting.
-- Keep important text readable, high-contrast, and inside safe margins.
-- Use confident spacing and avoid overstuffed layouts.
-- Avoid fake extra text, random logos, QR codes, decorative clutter, malformed typography, and generic AI-poster noise.
-- Treat the poster canvas as static print/editorial artwork rather than a clickable interface. If the source explicitly requests a product UI, browser window, dashboard, or device mockup, preserve that depicted content inside the poster.
-- CTA copy is extractive-only: include it only when the source explicitly supplies the wording. When output language differs, verify the translated CTA against a recorded exact source quote. Never invent action or status labels.
-- If no CTA is sourced, leave the action area empty. If one is sourced, render it as ordinary poster typography in a footer or text lockup. Do not place poster-level action copy inside a button, rounded rectangle, pill, chip, capsule, tab, input field, or any other clickable-looking UI container; do not decorate it with a shadow, arrow, chevron, or cursor icon.
+## 核心规则 · Core rules
 
-
-
-SELECTED STYLE — STRICTLY THIS VISUAL SYSTEM, DO NOT MIX OTHER STYLES:
-# Constructivist Impact
-
-## Intent
-
+### 目标 · Intent
+用对角线张力、强对比与图形化动势，做一张决绝有力的运动感海报。
 Create an urgent, geometric, campaign-like poster with diagonal force, strong contrast, and graphic propaganda-inspired energy.
 
-## Typography
-
+### 字体 · Typography
 - Use bold condensed sans-serif or slab-like display type.
 - Set type at strong angles or in assertive blocks.
 - Use uppercase sparingly for impact.
 - Keep details in stable horizontal areas.
 
-## Palette
+### 配色 · Palette
+- Red, black, cream, white, charcoal. Optional accents: mustard, steel gray, deep navy.
+- 【主色强调】只取一个精确强调色，不要彩虹堆砌。
 
-Red, black, cream, white, charcoal. Optional accents: mustard, steel gray, deep navy.
+### 意象 · Imagery
+- Use photo montage, silhouettes, geometric forms, arrows, rays, cropped figures, or symbolic objects.
+- 【场景】描述应支撑字体与版式，不要喧宾夺主（除非风格本身以主体物件为第一阅读）。
 
-## Imagery
+### 质感 · Texture / Material
+- Print grain, screenprint texture, paper aging, rough ink, overprint effects.
 
-Use photo montage, silhouettes, geometric forms, arrows, rays, cropped figures, or symbolic objects.
-
-## Texture / Material
-
-Print grain, screenprint texture, paper aging, rough ink, overprint effects.
-
-## Composition Rules
-
+### 构图 · Composition
 - Use diagonals to create momentum.
 - Build contrast between massive shapes and precise text.
 - Use geometric framing and directional emphasis.
 - Make the message feel decisive and public.
+- 版式从该风格允许的布局中选择：`diagonal-dynamic`；缺省 `diagonal-dynamic`。
+- 单一焦点、清晰阅读顺序：主标题 → 焦点画面 → 短句 → 页脚。
 
-## Avoid
+### 文字锁定 · Text lock（一张有戏）
+- 画面可见文字**只有三行**：【主标题】、【短句】、页脚「一张有戏 · 视觉习作」。
+- 简体中文；每个字正确成形；不要英文乱码、假活动、假日期、假地址、假奖项、假价格、假 CTA、假品牌。
+- 不要按钮/圆角胶囊/UI 容器；页脚就是普通小字排印。
 
-Historical parody, excessive propaganda symbols, cluttered rays, unreadable angled details, and soft decorative styling.
+### 避免 · Avoid
+- Historical parody, excessive propaganda symbols, cluttered rays, unreadable angled details, and soft decorative styling.
+- 额外假字、随机 logo、二维码、装饰堆砌、畸形字体、通用 AI 海报噪声、水印、UI。
 
+### 执行 · Execution
+不提问、不展示分析、不出多版本，直接输出一张海报。
 
-INTERNAL COMPOSITION:
-# Diagonal Dynamic
+## 可直接粘贴的最终提示词 · Ready-to-paste prompt template
 
-## Composition Structure
-
-- Use diagonal axes, slanted blocks, motion streaks, or angled crops.
-- Let headline or hero subject follow the main diagonal tension.
-- Anchor details in a stable counter-zone so they remain readable.
-- Use overlapping shapes to create velocity.
-
-## Hierarchy Rules
-
-1. Diagonal motion directs the first read.
-2. Headline rides or cuts across the energy field.
-3. Details remain controlled in a calmer area.
-
-## Text Placement
-
-- Use bold headline type that can survive rotation or skew.
-- Keep small text horizontal whenever possible.
-- Avoid placing key details on steep angles.
-
-## Image Treatment
-
-Use action imagery, sharp crops, motion blur, high-contrast silhouettes, or energetic abstraction.
-
-## Spacing Rules
-
-Allow diagonal elements to bleed, but keep text safe within margins.
-
-## Aspect-Ratio Behavior
-
-Strong in `2:3`, `4:5`, `9:16`, and `16:9`. Use longer diagonals in tall or wide ratios.
-
-## Avoid
-
-Chaotic angles, unreadable rotated text, too many direction lines, and no stable area for details.
-
-
-SPECIFIC SUBJECT AND ART DIRECTION:
-One monochrome worn running shoe cutout set on an ascending crimson diagonal wedge, cream/black geometry, no person.
-
-Quality: exquisite thoughtful art direction, one immediate focal point, sophisticated typographic spacing and clear reading order, original expressive composition with wide enough safe margins. Headline large and readable at phone thumbnail; secondary text restrained, not generic template. Typography adapted sensitively to real Chinese glyphs, with the visual weight demanded by style. Material/light/print treatment consistent with selected style. If any person appears, fictional mainland Chinese adult, natural anatomy and authentic face; otherwise no people. All props physically coherent unless the SPECIFIC surreal idea deliberately changes physics. No trademarks or label text on products, no fake logos/watermarks/QR. No poster mockup, wall frame, multiple-poster collage, UI buttons or decorative website components. The creative theme must determine composition; vary crop, hierarchy and negative space across the series. Output one finished poster only.
 ```
+【主标题】：{{主标题}}
+【短句】：{{短句}}
+【场景】：{{场景}}
+【版式】：{{版式，缺省 diagonal-dynamic；可选 diagonal-dynamic}}
+【主色强调】：{{主色强调}}
+【画幅】：{{画幅，默认 9:16}}
 
-全部 8 条提示词见 `PROMPTS.json`，来源见 `SOURCES.md`。
+Create exactly ONE polished professional {{画幅，默认 9:16}} portrait poster, static flat artwork, Chinese-mainland cultural/creative studio portfolio concept.
+Language: Simplified Chinese. Headline: {{主标题}}. Supporting phrase: {{短句}}. Tiny plain footer: 一张有戏 · 视觉习作. Exact visible text ONLY these three phrases, every character correctly formed. No English clutter, random numbers, fake events, dates, addresses, awards, offers, prices, affiliations, calls to action or status labels. All content is fictional/conceptual creative brief, no real client claim.
+If any field above is empty, fill it coherently from 【主标题】 so scene, accent and layout support one clear idea — do not ask questions.
+
+SELECTED STYLE — STRICTLY THIS VISUAL SYSTEM, DO NOT MIX OTHER STYLES:
+# Constructivist Impact
+Intent: Create an urgent, geometric, campaign-like poster with diagonal force, strong contrast, and graphic propaganda-inspired energy.
+Typography: Use bold condensed sans-serif or slab-like display type. Set type at strong angles or in assertive blocks. Use uppercase sparingly for impact. Keep details in stable horizontal areas.
+Palette: Red, black, cream, white, charcoal. Optional accents: mustard, steel gray, deep navy. Use exactly one precise accent from 【主色强调】.
+Imagery: Use photo montage, silhouettes, geometric forms, arrows, rays, cropped figures, or symbolic objects. Scene direction: {{场景}}.
+Texture / Material: Print grain, screenprint texture, paper aging, rough ink, overprint effects.
+Composition: Use diagonals to create momentum. Build contrast between massive shapes and precise text. Use geometric framing and directional emphasis. Make the message feel decisive and public. Use layout {{版式，缺省 diagonal-dynamic}} from allowed set (diagonal-dynamic). One dominant message, one focal point; reading order headline -> focal image -> supporting copy -> footer. Confident spacing; no overstuffed layout; no UI buttons/pills for the footer.
+
+Avoid: Historical parody, excessive propaganda symbols, cluttered rays, unreadable angled details, and soft decorative styling. Also avoid fake extra text, logos, QR codes, decorative clutter, malformed typography, generic AI-poster noise, watermarks, UI chrome.
+
+Do not ask questions. Do not show analysis or alternatives. Output the single finished poster only.
+```
